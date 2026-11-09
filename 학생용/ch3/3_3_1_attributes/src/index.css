@@ -1,0 +1,47 @@
+/* src/index.css — 3장 실습용 기본 스타일 */
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+}
+
+.done {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.badge {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 12px;
+}
+
+.card {
+  margin: 12px 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.error {
+  color: #dc2626;
+}
+
+.badge-high {
+  color: #dc2626;
+}
+
+.badge-normal {
+  color: #2563eb;
+}
+
+.badge-low {
+  color: #6b7280;
+}

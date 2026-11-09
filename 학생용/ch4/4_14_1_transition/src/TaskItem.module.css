@@ -1,0 +1,9 @@
+/* src/TaskItem.module.css */
+.item {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.item.removing {
+  opacity: 0;
+}

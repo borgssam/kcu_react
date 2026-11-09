@@ -1,0 +1,10 @@
+/* src/App.css */
+.task-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.task-item--done {
+  color: #999;
+  text-decoration: line-through;
+}

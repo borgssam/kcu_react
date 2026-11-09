@@ -1,0 +1,94 @@
+/* src/App.css — Tasko 화면 스타일 (7.4절, 7.8~7.10절에서 쓰는 스타일 포함) */
+.app {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+/* 할 일 입력 폼 */
+.task-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+.task-form button,
+.task-toolbar button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 5.10절 TaskBoard.module.css의 반응형 그리드를 그대로 가져온다 */
+.task-board {
+  display: grid;
+  grid-template-columns: 1fr; /* 모바일: 1열 */
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .task-board {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿: 2열 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .task-board {
+    grid-template-columns: repeat(3, 1fr); /* 데스크톱: 3열 */
+  }
+}
+
+/* 5.10절 TaskCard.module.css의 카드 모양 */
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 완료된 카드: 글자를 흐리게 하고 제목(label)에만 취소선 */
+.task-card--done {
+  color: #999;
+}
+
+.task-card--done label {
+  text-decoration: line-through;
+}
+
+/* 7.9절: 카드의 삭제 버튼 */
+.task-card__delete {
+  padding: 4px 10px;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  background: #fff;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+/* 7.10절: 남은 개수와 일괄 삭제 버튼 줄 */
+.task-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* 7.8절: 할 일이 없을 때 안내 문구 */
+.empty-state {
+  padding: 32px;
+  border: 2px dashed #ddd;
+  border-radius: 12px;
+  color: #888;
+  text-align: center;
+}
