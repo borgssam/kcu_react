@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map</title>
+</head>
+<body>
+<script>
+const tasks = [
+  { id: 1, title: "리액트 공부하기", isDone: false },
+  { id: 2, title: "운동하기", isDone: true },
+  { id: 3, title: "청소하기", isDone: false },
+  { id: 4, title: "공부하기", isDone: true },
+  { id: 5, title: "게임하기", isDone: false }
+];
+
+const titels = tasks.map( (task) => task.title);
+console.log(titels);
+
+
+// 아직 안한 일의 제목만 뽑아오기
+const pendingTitles = tasks
+.filter((task) => !task.isDone)
+.map((task) => task.title);
+console.log(pendingTitles);
+
+const result = tasks.forEach(
+  (task) => console.log(task.title)
+);
+
+//for of문으로도 가능
+for (const task of tasks) {
+  console.log(task.title);
+}
+
+
+const items = tasks.map(
+  (task)=> `<li>${task.title}</li>`
+);
+
+console.log(items);
+
+</script>  
+  
+</body>
+</html>

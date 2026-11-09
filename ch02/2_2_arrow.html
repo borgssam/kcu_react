@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화살표함수</title>
+</head>
+<body>
+  <script>
+
+    function doublefunc(num){
+      return num * 2;
+    }
+    console.log(doublefunc(5));
+
+    const doubleArrow = (num) => num * 2;
+    console.log(doubleArrow(5));
+
+    const greet = (name) => `Hello, ${name}!`;
+    console.log(greet('Alice')); 
+    
+    //화살표함수에 다른 함수 호출 가능 
+    const add = () =>console.log(1+2);
+    add();
+
+
+    const sub = (a,b) => {
+      c = a -b;
+      return c;
+    }
+    console.log(sub(5,3))
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클래스연습</title>
+</head>
+<body>
+<script>
+  class Task{
+    constructor(title, isDone = false){
+      this.title = title;
+      this.isDone = isDone;
+    }
+
+    toggle(){
+      this.isDone = !this.isDone;
+    }
+  }
+
+  const task1 = new Task('JS 공부하기');
+  // const task2 = new Task('JS 복습하기', true);
+
+  console.log(task1);
+  // console.log(task2);
+
+  task1.toggle();
+
+  class UrgentTask extends Task{
+    constructor(title, isDone = false, priority = 1){
+      super(title, isDone);
+      this.priority = priority;
+    }
+  }
+  const task2 = new UrgentTask('JS 공부하기2', true, 3  );
+  console.log(task2);
+
+
+</script>
+  
+</body>
+</html>

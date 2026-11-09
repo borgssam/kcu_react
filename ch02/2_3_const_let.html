@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  const taskTitle = "리액트 공부하기";
+  let   remainingCount = 5;
+
+  remainingCount = remainingCount - 1;
+  console.log(`할일: ${taskTitle}, 남은 할일: ${remainingCount}`);
+
+  // taskTitle = "리액트 공부하기2"; // const는 재할당 불가
+  try {
+    taskTitle = "리액트 공부하기2"; // const는 재할당 불가
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+
+  //일반적인 자바스크립트에서 값바꾸기
+  let tasks = [ {title:"공부하기",isDone: false} ];
+  
+  const before = tasks;
+  tasks[0].isDone = true;
+  console.log("직접 수정후 같은 배열인가? ",before === tasks); // true
+
+  //리액트에서 값바꾸기
+  const updatedTasks = tasks.map(
+  (task)=> task.title === "공부하기" ? {...task, isDone:true}: task
+  );
+  
+  console.log("직접 수정후 같은 배열인가? ",updatedTasks === tasks); // false
+
+  tasks.push({title:"운동하기",isDone: false});
+  tasks.push({title:"청소하기",isDone: true});
+
+  let donecount = 0;
+  for( const task of tasks){
+    if(task.isDone){
+      donecount++;
+    }
+  }
+  console.log(`총 할일: ${tasks.length}, 완료한 할일: ${donecount}`);
+
+  donecount = tasks.filter((task)=> task.isDone).length;
+  console.log(`총 할일: ${tasks.length}, 완료한 할일: ${donecount}`);
+
+
+
+
+
+
+</script>  
+  
+</body>
+</html>
