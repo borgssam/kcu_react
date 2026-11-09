@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script type="module">
+  import sum, {formatDate} from "./2_7_utils.js";
+  import {sortTasks, countDone} from "./2_7_taskHelpers.js";
+  console.log(sum(1,2));
+  const date = new Date();
+  const tomorrow = new Date(date);
+  tomorrow.setDate(date.getDate() + 1);
+
+  console.log(formatDate(tomorrow));
+
+
+  //일정목록
+
+  const tasks = [
+    {id: 1, title: "운동하기", isDone: true},
+    {id: 2, title: "공부하기", isDone: false},
+    {id: 3, title: "청소하기", isDone: false},
+    {id: 4, title: "밥먹기", isDone: true},
+
+  ];
+  console.log("일정정렬",sortTasks(tasks));
+  console.log("완료한일",countDone(tasks));
+  
+</script>
+  
+</body>
+</html>

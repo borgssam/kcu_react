@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+const name ="필라테스";
+console.log(`${name} 앱에 오신걸 환영합니다.`);
+
+//조건에 따라 클래스 이름 조합하기
+const getTaskClass = (isDone) => ` 테스트 아이템 : ${ isDone? "완료":"대기중..."  } `;
+
+console.log(getTaskClass(true));
+console.log(getTaskClass(false));
+
+
+const tasks = [
+  {id: 1, title: "운동하기", isDone: true},
+  {id: 2, title: "공부하기", isDone: false},
+  {id: 3, title: "청소하기", isDone: true},
+  {id: 4, title: "밥먹기", isDone: true},
+];
+//총 몇건, 완료 몇건
+const summary = `
+총 할일: ${tasks.length}건  
+완료한일: ${tasks.filter(task => task.isDone).length}건
+`;
+console.log(summary);
+
+// 완료율 = (완료건수/총건수) * 100
+const doneRate = Math.round(
+  ( tasks.filter( (task) => task.isDone).length/ tasks.length)*100
+);
+console.log(`완료율: ${doneRate}%`);
+
+</script>  
+  
+</body>
+</html>
