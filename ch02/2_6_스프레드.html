@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스프레드</title>
+</head>
+<body>
+<script>
+const task = {title: "공부하기", idDone: false};
+console.log(task);
+// const task2 = task; //참조
+// task2.title = "운동하기";
+// console.log(task.title, task2.title);
+
+//스프레드 연산자
+const updatedTask = {...task, idDone:true};
+console.log(updatedTask);
+
+
+const tasks = ["공부하기", "운동하기", "청소하기"];
+console.log(tasks);
+// const tasks2 = tasks;  //참조
+// tasks2[0] = "게임하기";
+// console.log(tasks, tasks2);
+
+//스프레드 연산자
+const updatedTasks = [...tasks, "게임하기"];
+console.log(updatedTasks);
+
+
+let todoList = [
+  {id: 1, title: "공부하기", isDone: false},
+];
+
+const setTodoList = (next)=>{
+  console.log("같은 배열인가요?", next === todoList);
+  todoList = next;
+};
+
+const addTask = (title)=>{
+  setTodoList([...todoList, {id: todoList.length + 1,  title, isDone: false}]);
+};
+
+const toggleTask = (id)=>{
+  setTodoList(
+    todoList.map(
+      (task)=> task.id === id ? {...task, isDone: !task.isDone}: task
+
+    )
+  );
+};
+
+console.log("추가전(", todoList.length, ")", todoList);
+addTask("운동하기");
+console.log("추가후(", todoList.length, ")", todoList);
+toggleTask(1);
+console.log("토글후(", todoList.length, ")", todoList);
+</script>
+  
+</body>
+</html>
