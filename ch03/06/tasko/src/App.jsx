@@ -2,10 +2,17 @@ import { useState } from 'react'
 import './App.css'
 
 //할일 컴포넌트
-function TaskItem(props){
+// function TaskItem(props){
+//   return(
+//     <li>
+//       [{props.priority}]{props.title} {props.isDone ? "완료" : "미완료"}
+//     </li>
+//   );
+// }
+function TaskItem({title, priority, isDone = false}){
   return(
     <li>
-      [{props.priority}]{props.title} {props.isDone ? "완료" : "미완료"}
+      [{priority}]{title} {isDone ? "완료" : "미완료"}
     </li>
   );
 }
