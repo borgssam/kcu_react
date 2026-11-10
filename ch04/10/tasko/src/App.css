@@ -1,0 +1,9 @@
+.task-item {
+  padding: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+.task-item-done {
+  color: #999;
+  text-decoration: line-through;
+}
