@@ -1,0 +1,25 @@
+/* src/Modal.css */
+.clip-box {
+  position: relative;
+  overflow: hidden;
+  height: 60px;
+  margin: 8px 0;
+  padding: 8px;
+  border: 2px dashed #f59e0b;
+  list-style: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-box {
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+}
