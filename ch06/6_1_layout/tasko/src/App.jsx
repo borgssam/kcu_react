@@ -10,7 +10,21 @@ function App() {
     { id: 3, title: "독서하기", isDone: true },
   ]);
 
-  
+  const [newTaskTitle, setNewTaskTitle] = useState("");
+  const handleAddTask = (e) => {
+    e.preventDefault();
+
+    //빈 제목 제외처리
+    const trimmedTitle = newTaskTitle.trim();
+    if( trimmedTitle === "") {return;}
+
+    //새로운 task를 추가
+    const newTask = {id: Date.now(), title: trimmedTitle, isDone: false};
+
+    setTasks([...tasks, newTask]);
+    setNewTaskTitle("");    
+  }
+
   // const handleToggleTask = (id) => {
   //   setTasks(tasks.map((t) => (t.id === id ? { ...t, isDone: !t.isDone } : t)));
   // };
@@ -34,7 +48,13 @@ function App() {
   return (
     <div className="app">
       <h1>Tasko</h1>
-      <TaskForm/>
+      <
+        TaskForm
+        value = {newTaskTitle}
+        onChange={ (e) => setNewTaskTitle(e.target.value)}
+        onSubmit={handleAddTask}
+        
+      />
       {/* <form className="task-form">
         <input placeholder="할 일을 입력하세요" />
         <button type="submit">추가</button>
