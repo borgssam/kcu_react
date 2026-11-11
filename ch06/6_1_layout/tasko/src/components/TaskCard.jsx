@@ -1,8 +1,8 @@
-function TaskCard({id, title, isDone}){
+function TaskCard({id, title, isDone, onToggle}){
    return (
     <div className={`task-card ${isDone? "task-card--done":""}`}>
       <label>
-        <input type="checkbox" checked={isDone} />
+        <input type="checkbox" checked={isDone} onChange={onToggle}/>
      
         {title}
       </label>

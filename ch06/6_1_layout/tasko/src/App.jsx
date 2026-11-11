@@ -10,6 +10,27 @@ function App() {
     { id: 3, title: "독서하기", isDone: true },
   ]);
 
+  
+  // const handleToggleTask = (id) => {
+  //   setTasks(tasks.map((t) => (t.id === id ? { ...t, isDone: !t.isDone } : t)));
+  // };
+  const handleToggleTask = (id)=>{
+    const  updatedTasks = tasks.map(
+      (task)=>{
+        //아이디가 일치하면
+        if(task.id === id) {
+          return {...task, isDone: !task.isDone}
+        } else {
+          //일치하지 않으면
+          return task;
+        }
+      }
+    )
+
+    setTasks(updatedTasks);
+
+  };
+
   return (
     <div className="app">
       <h1>Tasko</h1>
@@ -21,7 +42,7 @@ function App() {
 
 
       {/* 5.10절의 .board 그리드 컨테이너 */}
-      <TaskBoard  tasks={tasks}/>
+      <TaskBoard  tasks={tasks} onToggleTask={handleToggleTask}/>
       {/* <div className="task-board">
         <div className="task-card">
           <label>리액트 공부하기</label>
