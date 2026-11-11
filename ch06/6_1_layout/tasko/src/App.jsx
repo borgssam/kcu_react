@@ -58,12 +58,13 @@ function App() {
       } else {
         return -1; // a가 앞으로감.
       }
-    }
-
-    
+    }    
 
   );
 
+  const handleDeleteTask = (id) => {
+    setTasks(tasks.filter((t) => t.id !== id)); // 이 id만 빼고 남긴다
+  };
 
   return (
     <div className="app">
@@ -82,7 +83,10 @@ function App() {
 
 
       {/* 5.10절의 .board 그리드 컨테이너 */}
-      <TaskBoard  tasks={sortedTasks} onToggleTask={handleToggleTask}/>
+      <TaskBoard  tasks={sortedTasks} 
+      onToggleTask={handleToggleTask}
+        onDeleteTask={handleDeleteTask}
+      />
       {/* <div className="task-board">
         <div className="task-card">
           <label>리액트 공부하기</label>
