@@ -45,6 +45,26 @@ function App() {
 
   };
 
+  // 완료되지 않은 할 일을 앞으로 보낸다(원본 tasks는 그대로 두고 복사본을 정렬)
+  // const sortedTasks = [...tasks].sort((a, b) => {
+  //   if (a.isDone === b.isDone) return 0; // 둘 다 같으면 순서 유지
+  //   return a.isDone ? 1 : -1; // 완료된 것(true)을 뒤로
+  // });
+  const sortedTasks = [...tasks].sort(
+    (a,b)=>{
+      if(a.isDone === b.isDone) { return 0;} //변화없음
+      if(a.isDone === true) {
+        return 1; // a가 뒤로감.
+      } else {
+        return -1; // a가 앞으로감.
+      }
+    }
+
+    
+
+  );
+
+
   return (
     <div className="app">
       <h1>Tasko</h1>
@@ -62,7 +82,7 @@ function App() {
 
 
       {/* 5.10절의 .board 그리드 컨테이너 */}
-      <TaskBoard  tasks={tasks} onToggleTask={handleToggleTask}/>
+      <TaskBoard  tasks={sortedTasks} onToggleTask={handleToggleTask}/>
       {/* <div className="task-board">
         <div className="task-card">
           <label>리액트 공부하기</label>
