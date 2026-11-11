@@ -1,12 +1,14 @@
-import NavMenu from "./NavMenu"
-function App() {
-  
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-  return (
-      <div>
-        <NavMenu/>
-      </div>
-  )
+import TaskListPage from "./pages/TaskListPage";
+import TaskDetailPage from "./pages/TaskDetailPage";
+
+const router = createBrowserRouter( [
+  {path: "/",              element:<TaskListPage/>},
+  {path: "tasks/:id",      element: <TaskDetailPage/>},]    
+);
+function App() { 
+  return <RouterProvider router={router} />
 }
 
 export default App
