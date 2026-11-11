@@ -1,0 +1,9 @@
+.item{
+  padding:8px;
+  border-bottom: 3px solid #eee;
+}
+
+.done{
+  color: #999;
+  text-decoration: line-through;
+}
