@@ -5,7 +5,7 @@ function TaskBoard({tasks, onToggleTask, onDeleteTask}){
   if(tasks.length === 0){
     return (
       <EmptyState message="할일없습니다. 새로운 일을 추가해보세요"/>
-    ); //
+    ); ////
   }
 
    return (
